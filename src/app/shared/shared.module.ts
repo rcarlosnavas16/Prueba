@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MaterialModules } from './material';
@@ -30,6 +30,12 @@ import { SidenavComponent } from './layouts/layouts-components/sidenav/sidenav.c
     MatSidenavModule,
     // OTHERS
     FlexLayoutModule,
+  ],
+  providers: [
+    {
+      provide: MatSidenav,
+      useValue: {},
+    },
   ],
   exports: [FullLayoutComponent, MaterialModules, FlexLayoutModule],
 })

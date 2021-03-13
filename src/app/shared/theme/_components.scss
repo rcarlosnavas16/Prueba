@@ -1,0 +1,676 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Custom Form-field
+// -----------------------------------------------------------------------------------------------------
+mat-form-field.mat-form-field-appearance-fill,
+mat-form-field.mat-form-field-appearance-outline {
+  width: 100%;
+  font-size: 1em;
+  /* font-family: $font-family-zip; */
+  .mat-form-field-outline-thick {
+    color: rgba(0, 0, 0, 0.12);
+  }
+  .mat-form-field-wrapper {
+    .mat-form-field-underline {
+      display: none;
+    }
+    textarea.mat-input-element {
+      height: 80px;
+    }
+  }
+  .mat-form-field-label {
+    font-size: 12pt;
+  }
+  .mat-form-field-outline-start {
+    border-radius: 10px 0 0 10px;
+  }
+  .mat-form-field-outline-end {
+    border-radius: 0 10px 10px 0;
+  }
+  &.ng-touched {
+    &.ng-invalid {
+      .mat-form-field-outline,
+      .mat-form-field-label {
+        color: var(--cl_cancel-02);
+      }
+    }
+  }
+  &.ng-valid {
+    .mat-form-field-outline,
+    .mat-form-field-label {
+      color: var(--cl_principal);
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ filters
+// -----------------------------------------------------------------------------------------------------
+.select-filter {
+  .mat-form-field-appearance-outline {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+      .mat-form-field-flex {
+        height: 45px;
+      }
+      .mat-form-field-infix {
+        padding: 0.6em 0;
+      }
+    }
+  }
+}
+.search-bar {
+  .mat-form-field-appearance-outline {
+    .mat-form-field-prefix {
+      color: var(--cl_principal);
+    }
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-end {
+      border: none;
+    }
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+      .mat-form-field-flex {
+        height: 2.8em;
+        .mat-form-field-outline {
+          box-shadow: 0 0 4px 0 inset var(--cl_principal);
+          opacity: 0.5;
+          border-radius: 2em;
+          background: var(--cl_white);
+        }
+      }
+      .mat-form-field-infix {
+        padding: 0.2em 0;
+        border-top: 14px solid transparent;
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ Custom buttons
+// -----------------------------------------------------------------------------------------------------
+.mat-button,
+.mat-raised-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button {
+  font-size: 1em;
+  font-weight: 500;
+  /* font-family: $font-family-zip; */
+  border-radius: 0.4em !important;
+
+  &.has-icon {
+    padding: 4px 50px 4px 20px;
+
+    mat-icon {
+      font-size: 30px;
+      position: absolute;
+      top: 7px;
+      right: 18px;
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ Custom Material Icons
+// -----------------------------------------------------------------------------------------------------
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.input-search.outline {
+  border: 2px solid;
+  border-radius: 30px;
+  padding: 0 41px 0 20px;
+  border-color: #e6e6e6;
+  position: relative;
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 34px;
+    font: 400 12px/24px Comfortaa, sans-serif;
+  }
+
+  mat-icon {
+    color: $cl_secondary;
+    position: absolute;
+    top: 5px;
+    right: 9px;
+    font-weight: 900;
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ Custom Modal
+// -----------------------------------------------------------------------------------------------------
+// confirm modal
+body.global .fit {
+  .mat-dialog-container {
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    .mat-dialog-title {
+      padding: 1rem;
+      margin-bottom: 0;
+      border-bottom: 1px solid var(--cl_neutral-06);
+      .mat-icon-button {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+    .mat-dialog-content {
+      padding: 2rem;
+      p {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 12pt;
+      }
+    }
+    .mat-dialog-actions {
+      padding: 1rem;
+      border-top: 1px solid var(--cl_neutral-06);
+    }
+  }
+}
+// alert modal
+body.global .fit-alert {
+  .mat-dialog-container {
+    padding: 1em;
+    .mat-icon {
+      width: 90px;
+      height: 90px;
+      font-size: 90px;
+      line-height: 90px;
+    }
+    .mat-dialog-content {
+      p {
+        margin: 0;
+        text-align: center;
+        font-size: 12pt;
+      }
+    }
+    .mat-dialog-actions {
+      justify-content: center;
+
+      .mat-flat-button {
+        width: 9.375em;
+      }
+    }
+  }
+}
+// custom modal
+body.global .mat-dialog-container {
+  padding: 2em 3.5em;
+  border-radius: 10px;
+  .mat-dialog-title {
+    margin: 0;
+    margin-bottom: 1em;
+    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+  }
+  .mat-dialog-content {
+    margin: 0;
+    padding: 0;
+  }
+  .mat-dialog-actions {
+    padding: 0;
+    margin-bottom: 0;
+    justify-content: flex-end;
+  }
+}
+// get y set text values
+.mat-dialog-container {
+  .container {
+    padding: 0.2em;
+    margin: 0 0.125em;
+    height: 3.5em;
+    display: flex;
+    position: relative;
+    align-items: center;
+    #btn {
+      display: none;
+    }
+    &:hover {
+      /* cursor: pointer; */
+      #btn {
+        top: -1px;
+        right: -2px;
+        z-index: 2;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        display: flex;
+        position: absolute;
+        color: var(--cl_cancel-02);
+        .mat-icon {
+          font-size: 15px;
+          height: 15px;
+          width: 15px;
+          font-weight: 600;
+          line-height: 15px;
+          color: var(--cl_cancel-02);
+        }
+      }
+      a,
+      span {
+        font-weight: 600;
+      }
+    }
+
+    a,
+    span {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    a {
+      font-size: 2.5em;
+    }
+
+    span {
+      max-width: 5em;
+      font-size: 0.9em;
+      white-space: pre;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--cl_neutral-02);
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ Custom Color Class
+// -----------------------------------------------------------------------------------------------------
+.cl-principal {
+  color: var(--cl_principal);
+}
+.cl-secondary {
+  color: var(--secondary);
+}
+.cl-neutral-1 {
+  color: var(--cl_neutral-01);
+}
+.cl_blueviolet {
+  color: var(--cl_blueviolet);
+}
+
+.content {
+  width: 100%;
+  height: calc(657px - 64px);
+  padding: 2em 6em;
+  overflow: auto;
+  background-color: var(--whitesmoke);
+}
+
+/** 
+  Button styles. How to use them?
+
+  Basic Button:  <button mat-flat-button>Basic</button>
+  Accent Button: <button mat-flat-button color="accent">Accent</button>
+  Primary Button: <button mat-flat-button color="primary">Primary</button>
+  Secondary Button: <button mat-flat-button class="button-secondary">Secondary</button>
+  Confirm Button: <button mat-flat-button class="button-confirm">Confirm</button>
+*/
+
+body.global .mat-flat-button[disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body.global .mat-raised-button[disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+// -----------------------------------------------------------------------------------------------------
+// @ PRIMARY BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+body.global .mat-raised-button {
+  background-color: var(--cl_principal);
+  color: var(--cl_white);
+  font-family: var(--type_03);
+  min-width: 11em;
+
+  &:hover {
+    background-color: var(--cl_secondary);
+    box-shadow: inset 0 0 0 1px var(--cl_neutral-02);
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: inset 0 0 0 1px var(--cl_neutral-02);
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ SECONDARY BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+
+body.bilwee .mat-button-base.button-secondary {
+  box-shadow: inset 0 0 0 2px var(--cl_secondary);
+  padding: 0.4em 0.5em 0.6em;
+  background-color: var(--cl_white);
+
+  &.pressed,
+  &:hover {
+    box-shadow: inset 0 0 0 3px;
+    background-color: var(--cl_white);
+  }
+
+  &:active,
+  &:focus {
+    color: var(--cl_secondary);
+    box-shadow: inset 0 0 0 2px var(--cl_active);
+    outline: none;
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ ICON BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+body.global .mat-icon-button {
+  color: var(--cl_neutral-04);
+  border-radius: 50% !important;
+}
+body.global .mat-icon-button,
+.mat-menu-item {
+  &:hover {
+    .clone {
+      color: var(--cl_principal);
+    }
+    .preview {
+      color: var(--cl_neutral-03);
+    }
+    .upload {
+      color: var(--cl_info);
+    }
+    .deactivate {
+      color: var(--cl_cancel);
+    }
+    .activate {
+      color: var(--cl_success);
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ CONFIRM BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+body.global .mat-flat-button.mat-primary {
+  color: var(--cl_white);
+  background-color: var(--cl_principal);
+
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--cl_principal);
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: 0 0 1px 1px var(--cl_principal);
+  }
+}
+
+body.global .mat-flat-button.mat-accent {
+  margin-left: 0;
+  color: var(--cl_white);
+  background-color: var(--cl_success);
+  span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  span::after {
+    content: "»";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -16px;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--cl_success);
+    span {
+      padding-right: 2px;
+    }
+    span::after {
+      opacity: 1;
+      right: -8px;
+    }
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: 0 0 1px 1px var(--cl_success);
+  }
+}
+
+body.global .mat-stroked-button.mat-warn {
+  color: var(--cl_cancel-02);
+  border-color: var(--cl_cancel-02);
+
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--cl_cancel-02);
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: 0 0 1px 1px var(--cl_cancel-02);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ BASE BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+.bilwee .dialog-content-wrapper .mat-dialog-actions .mat-flat-button {
+  margin: 0;
+}
+
+.bilwee .dialog-content-wrapper .mat-dialog-actions {
+  margin: 0;
+}
+
+.close-button,
+.mat-button.close-button {
+  margin-right: -1em;
+}
+
+body.bilwee .mat-stroked-button,
+body.bilwee .mat-flat-button {
+  font-size: 1.3em;
+  font: var(--type_text-bold);
+  color: var(--cl_secondary);
+  font-family: var(--type_01);
+  border-radius: 3em;
+  font-weight: 500;
+  background-color: var(--cl_neutral-06);
+  padding: 0.5em 1.5em 0.5em;
+  line-height: 2em;
+  outline: none;
+  margin: 0.1em auto;
+
+  display: block;
+
+  &:hover {
+    color: var(--cl_neutral-02);
+    background-color: var(--cl_neutral-05);
+  }
+
+  &.has-icon {
+    fa-icon {
+      margin-left: 1em;
+      line-height: 0.6em;
+      margin-bottom: -0.8em;
+      font-size: 1.4em;
+      margin-right: 0em;
+      transform: translatey(0.1em);
+    }
+    .fas {
+      /*  margin-top: -0.2em; */
+      margin-left: 1em;
+      font-size: 1.4em;
+      /*  transform: translatey(0.1em); */
+    }
+  }
+
+  .min-width {
+    padding: 0.4em 1.6em 0.6em;
+  }
+
+  &.mat-none {
+    background-color: var(--cl_alfa);
+  }
+
+  &.loading-button {
+    position: relative;
+    i.fas.fa-spinner.fa-spin {
+      position: absolute;
+      top: calc(50% - 0.4em);
+      left: calc(50% - 0.2em);
+      margin: 0;
+      visibility: hidden;
+    }
+
+    .mat-button-wrapper {
+      visibility: visible;
+    }
+
+    &.loading-active {
+      i.fas.fa-spinner.fa-spin {
+        visibility: visible;
+      }
+      .mat-button-wrapper {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+body.bilwee div .mat-button-base[disabled="true"] {
+  background-color: var(--cl_neutral-05);
+  pointer-events: none;
+}
+body.bilwee div.floating-btn .mat-button-base[disabled="true"],
+body.bilwee .mat-paginator-range-actions .mat-button-base[disabled="true"] {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 0.6;
+}
+body.bilwee .mat-flat-button.mat-accent[disabled="true"] {
+  background-image: var(--cl_neutral-05);
+  opacity: 0.6;
+}
+
+body.bilwee .mat-button-base.type-03 {
+  padding: 0.3em 1em 0.4em;
+  transform: translateY(-0.5em);
+}
+
+.bilwee .mat-button-base.icon-button {
+  padding: 0.2em 1em;
+  display: inline-block;
+  min-width: initial;
+  font-size: 1.2em;
+}
+// -----------------------------------------------------------------------------------------------------
+// @ DOBLE BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+
+body.bilwee .mat-button-base.button-double {
+  padding: 0.6em 1.8em 0.2em 2.4em;
+  margin: 0;
+  line-height: 1.3em;
+  font-size: 0.9em;
+  text-transform: initial;
+  text-align: left;
+
+  b {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 400;
+    font-family: var(--type_01);
+  }
+
+  fa-icon,
+  .fas {
+    margin-left: 1.6em;
+    font-size: 1.8em;
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ RADIO BUTTONS
+// -----------------------------------------------------------------------------------------------------
+body.bilwee {
+  .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+  .mat-button-toggle-group-appearance-standard {
+    border: none;
+    padding-left: 0.5em;
+  }
+
+  .mat-button-toggle-appearance-standard {
+    box-shadow: inset 0 0 0 1px var(--cl_neutral-02);
+    border-radius: 3em;
+    font-size: 1rem;
+    margin: 0.2em;
+    overflow: hidden;
+
+    &.mat-button-toggle-checked {
+      background-color: var(--cl_neutral-07);
+      box-shadow: inset 0 0 0 1px var(--cl_neutral-07);
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--cl_neutral-06);
+    }
+
+    .mat-button-toggle-label-content {
+      line-height: 1.2em;
+      padding: 0.5em 1em 0.45em;
+      font-family: var(--type_01);
+      color: var(--cl_neutral-02);
+      font-size: 0.9rem;
+    }
+  }
+}

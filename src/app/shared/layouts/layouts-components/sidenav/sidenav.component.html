@@ -1,1 +1,69 @@
-<p>sidenav works!</p>
+<div [class.example-is-mobile]="mobileQuery.matches" fxLayout="column" fxFill>
+  <!-- [style.marginTop.px]="mobileQuery.matches ? 56 : 0" -->
+  <mat-sidenav-container fxLayout="column" fxFill>
+    <!-- MENU -->
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="100"
+    >
+      <div fxLayout="column" fxFlexFill>
+        <!-- NOMBRE 1 -->
+        <div fxLayout="column" fxLayoutAlign="space-between start" fxFlex>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" fxFlex>
+              <!-- ROW -->
+              <h3 class="sub-title">Total de casos confirmados</h3>
+              <span class="time-info">Actualizado hace xx minutos</span>
+            </div>
+            <!-- ROW -->
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
+              <mat-icon>info</mat-icon>
+            </div>
+          </div>
+          <!-- INDICATOR -->
+          <div fxLayout="row">
+            <span class="indicator">{{ indicator }}</span>
+          </div>
+          <!-- DETAILS -->
+          <div
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+            fxFlex
+            *ngFor="let item of case_info"
+            style="width: 100%"
+          >
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <mat-icon>{{ mat_icon.CIRCLE }}</mat-icon>
+              <span>{{ item.name }}</span>
+            </div>
+            <div class="current-value">000</div>
+          </div>
+        </div>
+        <!-- NOMBRE 2 -->
+        <div class="line-divider"></div>
+        <!-- NOMBRE 3 -->
+        <div fxLayout="column" fxLayoutAlign="space-between center" fxFlex>
+          <div
+            style="width: 100%"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <span>Navegar</span> <button>Ordenar</button>
+          </div>
+          <div><input type="text" placeholder="escribe aqui" /></div>
+          <div>valor seleccionado</div>
+        </div>
+      </div>
+    </mat-sidenav>
+    <!-- CONTENT -->
+    <mat-sidenav-content>
+      <!-- NAVBAR -->
+      <app-navbar (show_nav)="navToggle($event)"></app-navbar>
+
+      <!-- DASHBOARD -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
