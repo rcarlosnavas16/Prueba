@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -27,7 +28,9 @@ import { SidenavComponent } from './layouts/layouts-components/sidenav/sidenav.c
     MaterialModules,
     MatToolbarModule,
     MatSidenavModule,
+    // OTHERS
+    FlexLayoutModule,
   ],
-  exports: [FullLayoutComponent, MaterialModules],
+  exports: [FullLayoutComponent, MaterialModules, FlexLayoutModule],
 })
 export class SharedModule {}
