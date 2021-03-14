@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 
 import { MaterialModules } from './material';
 import { MsgBoxComponent } from './components/msg-box/msg-box.component';
@@ -28,6 +29,7 @@ import { SidenavComponent } from './layouts/layouts-components/sidenav/sidenav.c
     MaterialModules,
     MatToolbarModule,
     MatSidenavModule,
+    MatTabsModule,
     // OTHERS
     FlexLayoutModule,
   ],

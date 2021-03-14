@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MAT_ICON } from 'src/app/shared/utils/constants';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +7,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  public mat_icon = MAT_ICON;
+
   @Output() show_nav: EventEmitter<boolean> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -6,6 +6,7 @@ export const DISABLE_BUTTON = {
 // mat icon
 export enum MAT_ICON {
   CIRCLE = 'fiber_manual_record',
+  MENU = 'menu',
   /**
    *
    */

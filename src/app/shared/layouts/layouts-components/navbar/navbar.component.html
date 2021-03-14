@@ -1,6 +1,28 @@
-<mat-toolbar color="primary" class="example-toolbar">
-  <button mat-icon-button (click)="onAction(true)">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <h1 class="example-app-name">Responsive App</h1>
+<mat-toolbar
+  style="border: 1px blue solid"
+  color="primary"
+  class="example-toolbar"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <!-- ROW -->
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button (click)="onAction(true)">
+      <mat-icon>{{ mat_icon.MENU }}</mat-icon>
+    </button>
+
+    <h3 class="example-app-name">Estados</h3>
+
+    <button>guardar</button>
+  </div>
+  <!-- SPACE -->
+  <div class="example-spacer"></div>
+  <!-- NAVIGATION -->
+  <div fxLayout="row">
+    <mat-tab-group>
+      <mat-tab label="item 1"></mat-tab>
+      <mat-tab label="item 2"></mat-tab>
+      <mat-tab label="item 3"></mat-tab>
+    </mat-tab-group>
+  </div>
 </mat-toolbar>
