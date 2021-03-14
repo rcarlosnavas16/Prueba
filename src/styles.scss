@@ -1,13 +1,60 @@
-/* imports and global style files */
-/* @import "app/theme/variable"; */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core();
 
-/* 
-@import "./app/theme/account";
-@import "./app/theme/helpers";
-@import "./app/theme/typography";
-@import "./app/theme/components";
-@import "./app/theme/button";
-@import "./app/theme/table"; */
+// Define the palettes for your theme using custom colors from (http://mcg.mbitson.com).
+$cl-blue: (
+  50: #e0f0fb,
+  100: #b3dbf4,
+  200: #80c3ed,
+  300: #4daae6,
+  400: #2698e0,
+  500: #0086db,
+  600: #007ed7,
+  700: #0073d2,
+  800: #0069cd,
+  900: #0056c4,
+  A100: #ecf3ff,
+  A200: #b9d3ff,
+  A400: #86b3ff,
+  A700: #6da3ff,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: white,
+  ),
+);
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$code-primary: mat-palette($cl-blue);
+$code-accent: mat-palette($mat-pink, A200, A100, A400);
+$code-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$code-theme: mat-light-theme($code-primary, $code-accent, $code-warn);
+
+// Include theme styles for core and each component used in your app.
+@include angular-material-theme($code-theme);
+
+/* imports and global style files */
+
+@import "app/shared/theme/variable";
+@import "app/shared/theme/typography";
+@import "app/shared/theme/components";
 
 html,
 * {

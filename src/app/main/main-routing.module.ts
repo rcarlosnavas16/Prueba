@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { FullLayoutComponent } from '../shared/layouts/full-layout/full-layout.component';
 
 const routes: Routes = [
@@ -14,13 +13,17 @@ const routes: Routes = [
         pathMatch: 'full',
         redirectTo: 'dashboard',
       },
-      { path: 'dashboard', component: DashboardComponent },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
     ],
   },
 ];
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
