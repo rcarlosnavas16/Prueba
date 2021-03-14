@@ -13,24 +13,20 @@
 >
   <agm-marker
     *ngFor="let marker of markers"
-    [latitude]="marker.lat"
-    [longitude]="marker.lng"
-    [opacity]="marker.alpha"
+    [latitude]="marker.latitude"
+    [longitude]="marker.longitude"
     [markerDraggable]="true"
-    (markerClick)="selectMarker($event)"
+    (markerClick)="selectMarker(marker)"
   >
   </agm-marker>
-  <agm-rectangle
+  <!-- <agm-rectangle
     [north]="max('lat')"
     [east]="max('lng')"
     [south]="min('lat')"
     [west]="min('lng')"
   >
-  </agm-rectangle>
+  </agm-rectangle> -->
 </agm-map>
-<p *ngIf="selectedMarker">
-  Lat: {{ selectedMarker.lat }} Lng: {{ selectedMarker.lng }}
-</p>
 
 <!-- <section>
   <div class="example-label">Basic</div>

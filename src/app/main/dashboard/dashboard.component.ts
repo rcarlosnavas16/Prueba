@@ -1,4 +1,6 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,41 +11,45 @@ export class DashboardComponent implements OnInit {
   /* lat = 37.09024;
   lng = -95.712891;
   googleMapType = 'satellite'; */
+  public country_code: string = 'us';
 
   latitude = 43.879078;
   longitude = -103.4615581;
   selectedMarker: any;
-  markers = [
-    // These are all just random coordinates from https://www.random.org/geographic-coordinates/
-    { lat: 22.33159, lng: 105.63233, alpha: 1 },
-    { lat: 7.92658, lng: -12.05228, alpha: 1 },
-    { lat: 48.75606, lng: -118.859, alpha: 1 },
-    { lat: 5.19334, lng: -67.03352, alpha: 1 },
-    { lat: 12.09407, lng: 26.31618, alpha: 1 },
-    { lat: 47.92393, lng: 78.58339, alpha: 1 },
-  ];
+  markers: Array<{ latitude: number; longitude: number }> = [];
   /* lat: number, lng: number */
   addMarker(value: any) {
     console.log('agregar', value);
     /* this.markers.push({ lat, lng, alpha: 0.4 }); */
   }
 
-  max(coordType: 'lat' | 'lng'): number {
+  /* max(coordType: 'lat' | 'lng'): number {
     return Math.max(...this.markers.map((marker) => marker[coordType]));
   }
 
   min(coordType: 'lat' | 'lng'): number {
     return Math.min(...this.markers.map((marker) => marker[coordType]));
-  }
+  } */
 
   selectMarker(event: any) {
-    this.selectedMarker = {
+    console.log(event);
+
+    /* this.selectedMarker = {
       lat: event.latitude,
       lng: event.longitude,
-    };
+    }; */
   }
 
-  constructor() {}
+  constructor(private dashboard_service: DashboardService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let parameter = new HttpParams({ fromObject: { code: this.country_code } });
+    this.dashboard_service.fetch(parameter).subscribe((data_response) => {
+      let current_data = data_response.data.filter(
+        (item: any) => item?.country_code == 'us'
+      );
+      this.markers = current_data;
+      console.log(this.markers);
+    });
+  }
 }
