@@ -1,6 +1,11 @@
-import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 import { DashboardService } from './dashboard.service';
+import { COUNTRY_CODE } from 'src/app/shared/utils/constants';
+import { buildTemplate } from 'src/app/shared/utils/functions';
+import { Marker, Markers, SELECTED_MAKER } from './dashboard.model';
+
+declare var google: any;
 
 @Component({
   selector: 'app-dashboard',
@@ -8,48 +13,83 @@ import { DashboardService } from './dashboard.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  /* lat = 37.09024;
-  lng = -95.712891;
-  googleMapType = 'satellite'; */
-  public country_code: string = 'us';
+  public map = null;
 
-  latitude = 43.879078;
-  longitude = -103.4615581;
-  selectedMarker: any;
-  markers: Array<{ latitude: number; longitude: number }> = [];
-  /* lat: number, lng: number */
-  addMarker(value: any) {
-    console.log('agregar', value);
-    /* this.markers.push({ lat, lng, alpha: 0.4 }); */
-  }
-
-  /* max(coordType: 'lat' | 'lng'): number {
-    return Math.max(...this.markers.map((marker) => marker[coordType]));
-  }
-
-  min(coordType: 'lat' | 'lng'): number {
-    return Math.min(...this.markers.map((marker) => marker[coordType]));
-  } */
-
-  selectMarker(event: any) {
-    console.log(event);
-
-    /* this.selectedMarker = {
-      lat: event.latitude,
-      lng: event.longitude,
-    }; */
-  }
+  public markers: Array<Markers> = [];
 
   constructor(private dashboard_service: DashboardService) {}
 
   ngOnInit(): void {
-    let parameter = new HttpParams({ fromObject: { code: this.country_code } });
-    this.dashboard_service.fetch(parameter).subscribe((data_response) => {
-      let current_data = data_response.data.filter(
-        (item: any) => item?.country_code == 'us'
-      );
-      this.markers = current_data;
-      console.log(this.markers);
+    // get data
+    this.onFetch();
+    // GEOjSON
+    this.dashboard_service.getGeoJson().subscribe((data) => console.log(data));
+  }
+  /**
+   * get maker list
+   * @name onFetch
+   */
+  public onFetch(): void {
+    // call service
+    this.dashboard_service.fetch().subscribe((maker_response) => {
+      // on success response
+      if (maker_response) {
+        // filter data
+        let array_data = maker_response.data.filter(
+          (element) => element.country_code == COUNTRY_CODE
+        );
+        // add values
+        array_data.map((item) => {
+          // setting value
+          let current_marker = new Marker(item);
+          this.markers.push(current_marker.getMarker);
+        });
+        // load map
+        this.loadMap();
+      }
+    });
+  }
+  public loadMap(): void {
+    this.map = new google.maps.Map(
+      document.getElementById('map') as HTMLElement,
+      {
+        center: SELECTED_MAKER,
+        zoom: 3,
+      }
+    );
+
+    this.markers.forEach((item) => {
+      this.addMarker(item);
+    });
+  }
+  /**
+   * add a new marker
+   * @param element
+   */
+  public addMarker(element: Markers) {
+    let pop_up = new google.maps.InfoWindow({
+      // build template
+      content: buildTemplate(element),
+    });
+
+    let marker = new google.maps.Marker({
+      position: element.position,
+      map: this.map,
+    });
+
+    // show details
+    marker.addListener('click', () => {
+      console.log(element);
+    });
+
+    // show window on hover
+    marker.addListener('mouseover', () => {
+      pop_up.open(this.map, marker);
+    });
+
+    // close window when removing cursor
+    marker.addListener('mouseout', () => {
+      pop_up.close(this.map, marker);
     });
   }
 }

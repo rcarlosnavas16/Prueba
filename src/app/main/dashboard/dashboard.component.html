@@ -1,32 +1,47 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<!-- <agm-map id="map" [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map> -->
+<!-- <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script> -->
 
-<agm-map
+<div id="map"></div>
+
+<!-- <agm-map
   id="map"
-  [latitude]="latitude"
-  [longitude]="longitude"
-  [zoom]="2"
-  (mapClick)="addMarker($event)"
+  [latitude]="selectedMarker.latitude"
+  [longitude]="selectedMarker.longitude"
+  [zoom]="3"
 >
   <agm-marker
+    class="custom-maker"
     *ngFor="let marker of markers"
     [latitude]="marker.latitude"
     [longitude]="marker.longitude"
-    [markerDraggable]="true"
+    [markerDraggable]="false"
     (markerClick)="selectMarker(marker)"
   >
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
   </agm-marker>
-  <!-- <agm-rectangle
-    [north]="max('lat')"
-    [east]="max('lng')"
-    [south]="min('lat')"
-    [west]="min('lng')"
-  >
-  </agm-rectangle> -->
-</agm-map>
+
+</agm-map> -->
+<!-- <custom-map-marker
+  *ngFor="let marker of markers"
+      [markersInCluster]="cluster.markers"
+      [addressId]="cluster.address_id"
+      [lat]="cluster.coordinates.lat"
+      [lng]="cluster.coordinates.lng"
+      [label]="cluster.price.raw"
+      [isViewed]="true"
+      (markerClick)="onMarkerClick($event)">
+  </custom-map-marker> -->
+
+<!-- <agm-rectangle
+  [north]="max('lat')"
+  [east]="max('lng')"
+  [south]="min('lat')"
+  [west]="min('lng')"
+>
+</agm-rectangle> -->
 
 <!-- <section>
   <div class="example-label">Basic</div>

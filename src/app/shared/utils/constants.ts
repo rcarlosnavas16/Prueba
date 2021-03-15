@@ -1,8 +1,5 @@
-// enable o disable button
-export const DISABLE_BUTTON = {
-  YES: true,
-  NOT: false,
-};
+export const COUNTRY_CODE = 'us';
+
 // mat icon
 export enum MAT_ICON {
   CIRCLE = 'fiber_manual_record',
@@ -28,6 +25,11 @@ export enum MAT_ICON {
   DEACTIVATE_TEXT = 'Inactivar',
   ACTIVATE_TEXT = 'Activar',
 }
+// enable o disable button
+export const DISABLE_BUTTON = {
+  YES: true,
+  NOT: false,
+};
 // toggle name
 export enum STATUS_TOGGLE {
   ENABLE = 'Activo',

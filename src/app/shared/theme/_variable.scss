@@ -142,6 +142,9 @@ $img-bg: url("../../assets/images/bg-people-moves.jpg");
 .cl_nt3 {
   color: var(--cl_neutral-03);
 }
+.cl_black {
+  color: var(--primary);
+}
 // -----------------------------------------------------------------------------------------------------
 // @Root
 // -----------------------------------------------------------------------------------------------------
@@ -157,7 +160,6 @@ $img-bg: url("../../assets/images/bg-people-moves.jpg");
   --cl_alfa: rgba(0, 0, 0, 1);
   --cl_black: rgba(010, 020, 040, 1);
   --cl_white: rgba(255, 255, 250, 1);
-  /* --cl_neutral-01: rgba(035, 050, 090, 1); */
   --cl_neutral-01: var(--cl_alfa);
   --cl_neutral-02: #004087;
   --cl_neutral-03: rgba(123, 140, 184, 1);
