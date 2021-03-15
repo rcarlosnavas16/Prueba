@@ -1,0 +1,196 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Colors
+// -----------------------------------------------------------------------------------------------------
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900,
+  ),
+  $grays
+);
+
+$primary: $blue !default;
+$secondary: rgba(063, 092, 170, 1) !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+$theme-colors: () !default;
+
+$theme-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+  ),
+  $theme-colors
+);
+
+// -----------------------------------------------------------------------------------------------------
+// Weight and italics
+// -----------------------------------------------------------------------------------------------------
+
+$font-weight-light: 400 !default;
+$font-weight-normal: 500 !default;
+$font-weight-bold: 700 !default;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+
+$font-family-default: Roboto, "Helvetica Neue", sans-serif;
+$font-family-primary: "Poppins", sans-serif;
+$font-family-secondary: "Comfortaa", sans-serif;
+$font-family-zip: "Barlow Condensed", sans-serif;
+
+$cl_secondary: rgba(063, 092, 170, 1);
+$cl_primary: rgba(063, 174, 255, 1);
+
+$cl_alfa: rgba(255, 255, 255, 0);
+
+$cl_neutral-01: rgba(035, 050, 090, 1);
+$cl_neutral-02: rgba(047, 052, 136, 1);
+$cl_neutral-03: rgba(123, 140, 184, 1);
+$cl_neutral-04: rgba(209, 209, 209, 1);
+$cl_neutral-05: rgba(205, 213, 233, 1);
+$cl_neutral-06: rgba(240, 242, 248, 1);
+$cl_neutral-07: rgba(239, 250, 254, 1);
+
+$cl_active: $cl_primary;
+$cl_success: rgba(092, 195, 175, 1);
+$cl_info: rgba(255, 212, 127, 1);
+$cl_cancel: rgba(159, 054, 98, 1);
+$cl_cancel-02: rgba(207, 054, 98, 1);
+$cl_negative: rgba(255, 227, 235, 1);
+
+$gd_linear-00: linear-gradient(0deg, $cl_alfa, $cl_alfa);
+$gd_linear-01: linear-gradient(75deg, $cl_primary, $cl_secondary);
+$gd_linear-01b: linear-gradient(180deg, $cl_primary, $cl_secondary);
+// -----------------------------------------------------------------------------------------------------
+// @color
+// -----------------------------------------------------------------------------------------------------
+.cl_cancel {
+  color: var(--cl_cancel-02);
+}
+.cl_nt2 {
+  color: var(--cl_neutral-02);
+}
+.cl_nt3 {
+  color: var(--cl_neutral-03);
+}
+.cl_nt4 {
+  color: var(--cl_neutral-04);
+}
+.cl_black {
+  color: var(--primary);
+}
+.cl_success {
+  color: var(--cl_success) !important;
+}
+.cl_warn {
+  color: var(--cl_info) !important;
+}
+.cl_down {
+  color: var(--cl_box_shadow) !important;
+}
+// -----------------------------------------------------------------------------------------------------
+// @Root
+// -----------------------------------------------------------------------------------------------------
+:root {
+  --whitesmoke: #fafafa;
+  --primary: #232323;
+  --secondary: #013f72;
+  --cl_principal: #0086db;
+  --cl_secondary: #013c96;
+  --cl_success: #179c5e;
+  --cl_blueviolet: #a04998;
+  --cl_info: rgba(224, 153, 053, 1);
+  --cl_alfa: rgba(0, 0, 0, 1);
+  --cl_black: #565656;
+  --cl_white: rgba(255, 255, 250, 1);
+  --cl_neutral-01: var(--cl_alfa);
+  --cl_neutral-02: #004087;
+  --cl_neutral-03: rgba(123, 140, 184, 1);
+  --cl_neutral-04: rgba(209, 209, 209, 1);
+  --cl_neutral-06: #e9ecef;
+  --cl_cancel: rgba(192, 99, 102, 1);
+  --cl_cancel-02: rgba(207, 054, 58, 1);
+  --cl_box_shadow: rgba(128, 128, 128, 0.5);
+
+  /* ---------------------------------------- */
+  --cl_neutral-05: rgba(205, 213, 233, 1);
+  --cl_neutral-07: rgba(239, 250, 254, 1);
+  --cl_active: var(--cl_principal);
+
+  --cl_negative: rgba(255, 227, 235, 1);
+  --gd_linear-00: linear-gradient(0deg, var(--cl_alfa), var(--cl_alfa));
+  --gd_linear-01: linear-gradient(
+    75deg,
+    var(--cl_principal),
+    var(--cl_secondary)
+  );
+  --gd_linear-01b: linear-gradient(
+    180deg,
+    var(--cl_principal),
+    var(--cl_secondary)
+  );
+  /*========== #TYPOGRAPHY ==========*/
+  --type_default: Roboto, "Helvetica Neue", sans-serif;
+}

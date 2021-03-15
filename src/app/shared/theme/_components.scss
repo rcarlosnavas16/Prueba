@@ -1,0 +1,492 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Custom pop-up
+// -----------------------------------------------------------------------------------------------------
+.pop-up {
+  padding: 1em;
+  min-width: 20em;
+  h1 {
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+  .title {
+    font-size: 12pt;
+    font-weight: 600;
+  }
+  .bodyContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .sub-title {
+      font-size: 11pt;
+      font-weight: 400;
+    }
+    .circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.fix-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .items {
+    display: flex;
+    align-items: center;
+    .cl_success {
+      background: var(--cl_success);
+    }
+    .cl_warn {
+      background: var(--cl_info);
+    }
+    .cl_down {
+      background: var(--cl_box_shadow);
+    }
+  }
+}
+
+.line-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--cl_neutral-04);
+  border-radius: 2px;
+  margin: 6px auto;
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ toolbar
+// -----------------------------------------------------------------------------------------------------
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.navbar-shadow {
+  position: relative;
+  z-index: 2;
+  background-color: var(--white);
+  font: 400 14px/20px var(--type_default);
+  box-shadow: 5px 0px 4px 1px var(--cl_box_shadow);
+  -moz-box-shadow: 5px 0px 4px 1px var(--cl_box_shadow);
+  -webkit-box-shadow: 5px 0px 4px 1px var(--cl_box_shadow);
+}
+// -----------------------------------------------------------------------------------------------------
+// @ ICON BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+body.global .mat-icon-button {
+  color: var(--cl_principal);
+  border-radius: 50% !important;
+}
+body.global .mat-icon-button,
+.mat-menu-item {
+  &:hover {
+    .clone {
+      color: var(--cl_principal);
+    }
+    .preview {
+      color: var(--cl_neutral-03);
+    }
+    .upload {
+      color: var(--cl_info);
+    }
+    .deactivate {
+      color: var(--cl_cancel);
+    }
+    .activate {
+      color: var(--cl_success);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ sideNav component
+// -----------------------------------------------------------------------------------------------------
+.mat-drawer.mat-drawer-side {
+  padding: 2em 1em;
+  h3 {
+    margin: 0;
+    font-size: 500;
+  }
+  .mat-icon {
+    color: var(--cl_black);
+  }
+  .indicator {
+    font-size: 2em;
+  }
+  .fix-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Custom buttons
+// -----------------------------------------------------------------------------------------------------
+.mat-button,
+.mat-raised-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button {
+  font-size: 1em;
+  font-weight: 500;
+  /* font-family: $font-family-zip; */
+  border-radius: 0.4em !important;
+
+  &.has-icon {
+    padding: 4px 50px 4px 20px;
+
+    mat-icon {
+      font-size: 30px;
+      position: absolute;
+      top: 7px;
+      right: 18px;
+    }
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ Custom Material Icons
+// -----------------------------------------------------------------------------------------------------
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.input-search.outline {
+  border: 2px solid;
+  border-radius: 30px;
+  padding: 0 41px 0 20px;
+  border-color: #e6e6e6;
+  position: relative;
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 34px;
+    font: 400 12px/24px Comfortaa, sans-serif;
+  }
+
+  mat-icon {
+    color: $cl_secondary;
+    position: absolute;
+    top: 5px;
+    right: 9px;
+    font-weight: 900;
+  }
+}
+/** 
+  Button styles. How to use them?
+
+  Basic Button:  <button mat-flat-button>Basic</button>
+  Accent Button: <button mat-flat-button color="accent">Accent</button>
+  Primary Button: <button mat-flat-button color="primary">Primary</button>
+  Secondary Button: <button mat-flat-button class="button-secondary">Secondary</button>
+  Confirm Button: <button mat-flat-button class="button-confirm">Confirm</button>
+*/
+
+body.global .mat-flat-button[disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body.global .mat-raised-button[disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+// -----------------------------------------------------------------------------------------------------
+// @ PRIMARY BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+body.global .mat-raised-button {
+  background-color: var(--cl_principal);
+  color: var(--cl_white);
+  font-family: var(--type_03);
+  min-width: 11em;
+
+  &:hover {
+    background-color: var(--cl_secondary);
+    box-shadow: inset 0 0 0 1px var(--cl_neutral-02);
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: inset 0 0 0 1px var(--cl_neutral-02);
+  }
+}
+// -----------------------------------------------------------------------------------------------------
+// @ SECONDARY BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+
+body.bilwee .mat-button-base.button-secondary {
+  box-shadow: inset 0 0 0 2px var(--cl_secondary);
+  padding: 0.4em 0.5em 0.6em;
+  background-color: var(--cl_white);
+
+  &.pressed,
+  &:hover {
+    box-shadow: inset 0 0 0 3px;
+    background-color: var(--cl_white);
+  }
+
+  &:active,
+  &:focus {
+    color: var(--cl_secondary);
+    box-shadow: inset 0 0 0 2px var(--cl_active);
+    outline: none;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ CONFIRM BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+body.global .mat-flat-button.mat-primary {
+  color: var(--cl_white);
+  background-color: var(--cl_principal);
+
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--cl_principal);
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: 0 0 1px 1px var(--cl_principal);
+  }
+}
+
+body.global .mat-flat-button.mat-accent {
+  margin-left: 0;
+  color: var(--cl_white);
+  background-color: var(--cl_success);
+  span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  span::after {
+    content: "»";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -16px;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--cl_success);
+    span {
+      padding-right: 2px;
+    }
+    span::after {
+      opacity: 1;
+      right: -8px;
+    }
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: 0 0 1px 1px var(--cl_success);
+  }
+}
+
+body.global .mat-stroked-button.mat-warn {
+  color: var(--cl_cancel-02);
+  border-color: var(--cl_cancel-02);
+
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--cl_cancel-02);
+  }
+  &:focus,
+  &.pressed {
+    box-shadow: 0 0 1px 1px var(--cl_cancel-02);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ BASE BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+.bilwee .dialog-content-wrapper .mat-dialog-actions .mat-flat-button {
+  margin: 0;
+}
+
+.bilwee .dialog-content-wrapper .mat-dialog-actions {
+  margin: 0;
+}
+
+.close-button,
+.mat-button.close-button {
+  margin-right: -1em;
+}
+
+body.bilwee .mat-stroked-button,
+body.bilwee .mat-flat-button {
+  font-size: 1.3em;
+  font: var(--type_text-bold);
+  color: var(--cl_secondary);
+  font-family: var(--type_01);
+  border-radius: 3em;
+  font-weight: 500;
+  background-color: var(--cl_neutral-06);
+  padding: 0.5em 1.5em 0.5em;
+  line-height: 2em;
+  outline: none;
+  margin: 0.1em auto;
+
+  display: block;
+
+  &:hover {
+    color: var(--cl_neutral-02);
+    background-color: var(--cl_neutral-05);
+  }
+
+  &.has-icon {
+    fa-icon {
+      margin-left: 1em;
+      line-height: 0.6em;
+      margin-bottom: -0.8em;
+      font-size: 1.4em;
+      margin-right: 0em;
+      transform: translatey(0.1em);
+    }
+    .fas {
+      /*  margin-top: -0.2em; */
+      margin-left: 1em;
+      font-size: 1.4em;
+      /*  transform: translatey(0.1em); */
+    }
+  }
+
+  .min-width {
+    padding: 0.4em 1.6em 0.6em;
+  }
+
+  &.mat-none {
+    background-color: var(--cl_alfa);
+  }
+
+  &.loading-button {
+    position: relative;
+    i.fas.fa-spinner.fa-spin {
+      position: absolute;
+      top: calc(50% - 0.4em);
+      left: calc(50% - 0.2em);
+      margin: 0;
+      visibility: hidden;
+    }
+
+    .mat-button-wrapper {
+      visibility: visible;
+    }
+
+    &.loading-active {
+      i.fas.fa-spinner.fa-spin {
+        visibility: visible;
+      }
+      .mat-button-wrapper {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+body.bilwee div .mat-button-base[disabled="true"] {
+  background-color: var(--cl_neutral-05);
+  pointer-events: none;
+}
+body.bilwee div.floating-btn .mat-button-base[disabled="true"],
+body.bilwee .mat-paginator-range-actions .mat-button-base[disabled="true"] {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 0.6;
+}
+body.bilwee .mat-flat-button.mat-accent[disabled="true"] {
+  background-image: var(--cl_neutral-05);
+  opacity: 0.6;
+}
+
+body.bilwee .mat-button-base.type-03 {
+  padding: 0.3em 1em 0.4em;
+  transform: translateY(-0.5em);
+}
+
+.bilwee .mat-button-base.icon-button {
+  padding: 0.2em 1em;
+  display: inline-block;
+  min-width: initial;
+  font-size: 1.2em;
+}
+// -----------------------------------------------------------------------------------------------------
+// @ DOBLE BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+
+body.bilwee .mat-button-base.button-double {
+  padding: 0.6em 1.8em 0.2em 2.4em;
+  margin: 0;
+  line-height: 1.3em;
+  font-size: 0.9em;
+  text-transform: initial;
+  text-align: left;
+
+  b {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 400;
+    font-family: var(--type_01);
+  }
+
+  fa-icon,
+  .fas {
+    margin-left: 1.6em;
+    font-size: 1.8em;
+  }
+}

@@ -1,0 +1,118 @@
+<div [class.example-is-mobile]="mobileQuery.matches" fxLayout="column" fxFill>
+  <mat-sidenav-container fxLayout="column" fxFill>
+    <!-- MENU -->
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="100"
+    >
+      <div fxLayout="column" class="cl_nt4" fxFlexFill>
+        <!-- NOMBRE 1 -->
+        <div fxLayout="column" fxLayoutAlign="space-between start" fxFlex>
+          <div class="mb-1" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" class="mr-1" fxFlex>
+              <!-- ROW -->
+              <span class="sub-title font-weight-normal cl_black">
+                Total de casos confirmados
+              </span>
+              <span class="time-info" *ngIf="marker.updated"
+                >Actualizado a las:
+                {{ marker.updated | date: "shortTime" }}</span
+              >
+            </div>
+            <!-- ROW -->
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex="24px">
+              <mat-icon>{{ mat_icon.INFO }}</mat-icon>
+            </div>
+          </div>
+
+          <!-- INDICATOR -->
+          <div class="mb-1" fxLayout="row">
+            <span class="indicator font-weight-bold cl_cancel">{{
+              marker.total_count
+            }}</span>
+          </div>
+
+          <!-- ACTIVE CASE -->
+          <div
+            class="w-100 mb-1"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <div fxLayout="row">
+              <mat-icon class="fix-icon cl_warn">{{
+                mat_icon.CIRCLE || "-"
+              }}</mat-icon>
+              <span class="cl_black">Casos activos</span>
+            </div>
+            <span class="current-value">{{ marker.confirmed }}</span>
+          </div>
+
+          <!-- RECOVERED CASE -->
+          <div
+            class="w-100 mb-1"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <div fxLayout="row">
+              <mat-icon class="fix-icon cl_success">{{
+                mat_icon.CIRCLE || "-"
+              }}</mat-icon>
+              <span class="cl_black">Casos recuperados</span>
+            </div>
+            <span class="current-value">{{ marker.recovered }}</span>
+          </div>
+
+          <!-- DEAD CASE -->
+          <div
+            class="w-100 mb-1"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <mat-icon class="fix-icon cl_black">{{
+                mat_icon.CIRCLE || "-"
+              }}</mat-icon>
+              <span class="cl_black">Casos mortales</span>
+            </div>
+            <span class="current-value">{{ marker.dead }}</span>
+          </div>
+        </div>
+
+        <!-- LINE -->
+        <div class="line-divider"></div>
+
+        <!-- FILTER SECTION -->
+        <div
+          class="mt-1"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          fxFlex
+        >
+          <div
+            class="w-100 mb-1"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <span>Navegar</span>
+            <button mat-stroked-button color="primary">Buscar</button>
+          </div>
+
+          <mat-form-field class="w-100">
+            <mat-label>escribe aquí</mat-label>
+            <input matInput placeholder="busqueda" />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-sidenav>
+    <!-- CONTENT -->
+    <mat-sidenav-content>
+      <!-- NAVBAR -->
+      <app-navbar (show_nav)="navToggle($event)"></app-navbar>
+
+      <!-- DASHBOARD -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

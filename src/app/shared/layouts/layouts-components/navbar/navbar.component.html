@@ -1,0 +1,26 @@
+<mat-toolbar
+  class="navbar-shadow"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <!-- ROW -->
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button (click)="onAction(true)">
+      <mat-icon>{{ mat_icon.MENU }}</mat-icon>
+    </button>
+
+    <h3 class="state-name">{{ locations || "Estados" }}</h3>
+  </div>
+
+  <!-- SPACE -->
+  <div class="example-spacer"></div>
+
+  <!-- NAVIGATION -->
+  <div fxLayout="row" fxLayoutAlign="end end" style="height: 100%">
+    <mat-tab-group>
+      <mat-tab label="Información general"></mat-tab>
+      <mat-tab label="Noticias"></mat-tab>
+      <mat-tab label="Gráficos"></mat-tab>
+    </mat-tab-group>
+  </div>
+</mat-toolbar>

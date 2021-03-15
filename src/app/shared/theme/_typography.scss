@@ -1,0 +1,115 @@
+@import "~@angular/material/theming";
+
+// -----------------------------------------------------------------------------------------------------
+// @ Custom classes for app
+// -----------------------------------------------------------------------------------------------------
+
+.title {
+  font-weight: 500;
+  /* font-family: $font-family-secondary; */
+  font-size: 1.6em;
+}
+.title.normal {
+  font-weight: 700;
+}
+.title.light {
+  font-weight: 600;
+}
+small {
+  font-size: 0.6em;
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Size helpers
+// -----------------------------------------------------------------------------------------------------
+@for $index from 6 through 30 {
+  .font-size-#{$index}-px {
+    font-size: #{$index}px !important;
+  }
+}
+
+b,
+strong,
+.text-bold {
+  font-weight: 700;
+}
+p {
+  padding: 1rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-semibold {
+  font-weight: 600;
+}
+
+.text-strike {
+  text-decoration: line-through;
+}
+.text-no-decoration {
+  text-decoration: none;
+}
+
+.text-super {
+  vertical-align: super;
+}
+
+.text-sub {
+  vertical-align: sub;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-weight-light {
+  font-weight: $font-weight-light;
+}
+.font-weight-normal {
+  font-weight: $font-weight-normal;
+}
+.font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+.font-italic {
+  font-style: italic;
+}
+.w-100 {
+  width: 100%;
+}
+.mr-1 {
+  margin-right: 1em;
+}
+.mt-1 {
+  margin-top: 1em;
+}
+.mb-1 {
+  margin-bottom: 1em;
+}
