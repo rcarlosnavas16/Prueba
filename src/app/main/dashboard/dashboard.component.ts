@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
       document.getElementById('map') as HTMLElement,
       {
         center: SELECTED_MAKER,
-        zoom: 3,
+        zoom: 4,
       }
     );
 

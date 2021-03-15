@@ -1,5 +1,33 @@
 @import "~@angular/material/theming";
 
+// -----------------------------------------------------------------------------------------------------
+// @ Custom classes for app
+// -----------------------------------------------------------------------------------------------------
+
+.title {
+  font-weight: 500;
+  /* font-family: $font-family-secondary; */
+  font-size: 1.6em;
+}
+.title.normal {
+  font-weight: 700;
+}
+.title.light {
+  font-weight: 600;
+}
+small {
+  font-size: 0.6em;
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Size helpers
+// -----------------------------------------------------------------------------------------------------
+@for $index from 6 through 30 {
+  .font-size-#{$index}-px {
+    font-size: #{$index}px !important;
+  }
+}
+
 b,
 strong,
 .text-bold {
@@ -61,122 +89,27 @@ p {
   text-align: right;
 }
 
-@each $color, $value in $theme-colors {
-  .text-#{$color} {
-    color: $value;
-  }
-}
-
-@each $color, $value in $theme-colors {
-  .bg-#{$color} {
-    background-color: $value;
-  }
-}
-
-.bg-white {
-  background-color: white;
-}
-
-// Boxed text
-.text-boxed {
-  border-radius: 2px;
-  padding: 4px 8px;
-  margin: 0 8px;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-// Truncate
-.text-truncate {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.text-justify {
-  text-align: justify !important;
-}
-.text-nowrap {
-  white-space: nowrap !important;
-}
-.text-lowercase {
-  text-transform: lowercase !important;
-}
-.text-uppercase {
-  text-transform: uppercase !important;
-}
-.text-capitalize {
-  text-transform: capitalize !important;
-}
-
 .font-weight-light {
-  font-weight: $font-weight-light !important;
+  font-weight: $font-weight-light;
 }
 .font-weight-normal {
-  font-weight: $font-weight-normal !important;
+  font-weight: $font-weight-normal;
 }
 .font-weight-bold {
-  font-weight: $font-weight-bold !important;
+  font-weight: $font-weight-bold;
 }
 .font-italic {
-  font-style: italic !important;
+  font-style: italic;
 }
-
-.text-white {
-  color: $white !important;
-}
-
-.text-body {
-  color: $body-color !important;
-}
-.text-muted {
-  color: #cccccc !important;
-}
-
-.text-black-50 {
-  color: rgba($black, 0.5) !important;
-}
-.text-white-50 {
-  color: rgba($white, 0.5) !important;
-}
-
-// -----------------------------------------------------------------------------------------------------
-// @ Size helpers
-// -----------------------------------------------------------------------------------------------------
-@for $index from 6 through 30 {
-  .font-size-#{$index}-px {
-    font-size: #{$index}px !important;
-  }
-}
-
-.field-error-hint {
-  color: #dc3545;
-  font-size: 75%;
-  position: absolute;
-  box-sizing: border-box;
+.w-100 {
   width: 100%;
-  margin-top: 0.6666666667em;
-  top: 24px;
-  right: 0;
 }
-
-// -----------------------------------------------------------------------------------------------------
-// @ Custom classes for app
-// -----------------------------------------------------------------------------------------------------
-
-.title {
-  font-weight: 500;
-  /* font-family: $font-family-secondary; */
-  font-size: 1.6em;
+.mr-1 {
+  margin-right: 1em;
 }
-.title.normal {
-  font-weight: 700;
+.mt-1 {
+  margin-top: 1em;
 }
-.title.light {
-  font-weight: 600;
-}
-small {
-  font-size: 0.6em;
+.mb-1 {
+  margin-bottom: 1em;
 }

@@ -108,7 +108,7 @@ $cl_alfa: rgba(255, 255, 255, 0);
 $cl_neutral-01: rgba(035, 050, 090, 1);
 $cl_neutral-02: rgba(047, 052, 136, 1);
 $cl_neutral-03: rgba(123, 140, 184, 1);
-$cl_neutral-04: rgba(183, 178, 179, 1);
+$cl_neutral-04: rgba(209, 209, 209, 1);
 $cl_neutral-05: rgba(205, 213, 233, 1);
 $cl_neutral-06: rgba(240, 242, 248, 1);
 $cl_neutral-07: rgba(239, 250, 254, 1);
@@ -123,16 +123,9 @@ $cl_negative: rgba(255, 227, 235, 1);
 $gd_linear-00: linear-gradient(0deg, $cl_alfa, $cl_alfa);
 $gd_linear-01: linear-gradient(75deg, $cl_primary, $cl_secondary);
 $gd_linear-01b: linear-gradient(180deg, $cl_primary, $cl_secondary);
-$img-bg: url("../../assets/images/bg-people-moves.jpg");
 // -----------------------------------------------------------------------------------------------------
 // @color
 // -----------------------------------------------------------------------------------------------------
-.cl_success {
-  color: var(--cl_success);
-}
-.cl_warn {
-  color: var(--cl_info);
-}
 .cl_cancel {
   color: var(--cl_cancel-02);
 }
@@ -142,8 +135,20 @@ $img-bg: url("../../assets/images/bg-people-moves.jpg");
 .cl_nt3 {
   color: var(--cl_neutral-03);
 }
+.cl_nt4 {
+  color: var(--cl_neutral-04);
+}
 .cl_black {
   color: var(--primary);
+}
+.cl_success {
+  color: var(--cl_success) !important;
+}
+.cl_warn {
+  color: var(--cl_info) !important;
+}
+.cl_down {
+  color: var(--cl_box_shadow) !important;
 }
 // -----------------------------------------------------------------------------------------------------
 // @Root
@@ -158,12 +163,12 @@ $img-bg: url("../../assets/images/bg-people-moves.jpg");
   --cl_blueviolet: #a04998;
   --cl_info: rgba(224, 153, 053, 1);
   --cl_alfa: rgba(0, 0, 0, 1);
-  --cl_black: rgba(010, 020, 040, 1);
+  --cl_black: #565656;
   --cl_white: rgba(255, 255, 250, 1);
   --cl_neutral-01: var(--cl_alfa);
   --cl_neutral-02: #004087;
   --cl_neutral-03: rgba(123, 140, 184, 1);
-  --cl_neutral-04: rgba(183, 178, 179, 1);
+  --cl_neutral-04: rgba(209, 209, 209, 1);
   --cl_neutral-06: #e9ecef;
   --cl_cancel: rgba(192, 99, 102, 1);
   --cl_cancel-02: rgba(207, 054, 58, 1);

@@ -104,48 +104,27 @@ body.global .mat-icon-button,
 }
 
 // -----------------------------------------------------------------------------------------------------
-// @ filters
+// @ sideNav component
 // -----------------------------------------------------------------------------------------------------
-.select-filter {
-  .mat-form-field-appearance-outline {
-    .mat-form-field-wrapper {
-      padding-bottom: 0;
-      .mat-form-field-flex {
-        height: 45px;
-      }
-      .mat-form-field-infix {
-        padding: 0.6em 0;
-      }
-    }
+.mat-drawer.mat-drawer-side {
+  padding: 2em 1em;
+  h3 {
+    margin: 0;
+    font-size: 500;
+  }
+  .mat-icon {
+    color: var(--cl_black);
+  }
+  .indicator {
+    font-size: 2em;
+  }
+  .fix-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
   }
 }
-.search-bar {
-  .mat-form-field-appearance-outline {
-    .mat-form-field-prefix {
-      color: var(--cl_principal);
-    }
-    .mat-form-field-outline-start,
-    .mat-form-field-outline-end {
-      border: none;
-    }
-    .mat-form-field-wrapper {
-      padding-bottom: 0;
-      .mat-form-field-flex {
-        height: 2.8em;
-        .mat-form-field-outline {
-          box-shadow: 0 0 4px 0 inset var(--cl_principal);
-          opacity: 0.5;
-          border-radius: 2em;
-          background: var(--cl_white);
-        }
-      }
-      .mat-form-field-infix {
-        padding: 0.2em 0;
-        border-top: 14px solid transparent;
-      }
-    }
-  }
-}
+
 // -----------------------------------------------------------------------------------------------------
 // @ Custom buttons
 // -----------------------------------------------------------------------------------------------------
@@ -250,168 +229,6 @@ body.global .mat-icon-button,
     font-weight: 900;
   }
 }
-// -----------------------------------------------------------------------------------------------------
-// @ Custom Modal
-// -----------------------------------------------------------------------------------------------------
-// confirm modal
-body.global .fit {
-  .mat-dialog-container {
-    padding: 0;
-    border-radius: 5px;
-    overflow: hidden;
-    .mat-dialog-title {
-      padding: 1rem;
-      margin-bottom: 0;
-      border-bottom: 1px solid var(--cl_neutral-06);
-      .mat-icon-button {
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-      }
-    }
-    .mat-dialog-content {
-      padding: 2rem;
-      p {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        font-size: 12pt;
-      }
-    }
-    .mat-dialog-actions {
-      padding: 1rem;
-      border-top: 1px solid var(--cl_neutral-06);
-    }
-  }
-}
-// alert modal
-body.global .fit-alert {
-  .mat-dialog-container {
-    padding: 1em;
-    .mat-icon {
-      width: 90px;
-      height: 90px;
-      font-size: 90px;
-      line-height: 90px;
-    }
-    .mat-dialog-content {
-      p {
-        margin: 0;
-        text-align: center;
-        font-size: 12pt;
-      }
-    }
-    .mat-dialog-actions {
-      justify-content: center;
-
-      .mat-flat-button {
-        width: 9.375em;
-      }
-    }
-  }
-}
-// custom modal
-body.global .mat-dialog-container {
-  padding: 2em 3.5em;
-  border-radius: 10px;
-  .mat-dialog-title {
-    margin: 0;
-    margin-bottom: 1em;
-    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
-  }
-  .mat-dialog-content {
-    margin: 0;
-    padding: 0;
-  }
-  .mat-dialog-actions {
-    padding: 0;
-    margin-bottom: 0;
-    justify-content: flex-end;
-  }
-}
-// get y set text values
-.mat-dialog-container {
-  .container {
-    padding: 0.2em;
-    margin: 0 0.125em;
-    height: 3.5em;
-    display: flex;
-    position: relative;
-    align-items: center;
-    #btn {
-      display: none;
-    }
-    &:hover {
-      /* cursor: pointer; */
-      #btn {
-        top: -1px;
-        right: -2px;
-        z-index: 2;
-        width: 15px;
-        height: 15px;
-        line-height: 15px;
-        display: flex;
-        position: absolute;
-        color: var(--cl_cancel-02);
-        .mat-icon {
-          font-size: 15px;
-          height: 15px;
-          width: 15px;
-          font-weight: 600;
-          line-height: 15px;
-          color: var(--cl_cancel-02);
-        }
-      }
-      a,
-      span {
-        font-weight: 600;
-      }
-    }
-
-    a,
-    span {
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-    a {
-      font-size: 2.5em;
-    }
-
-    span {
-      max-width: 5em;
-      font-size: 0.9em;
-      white-space: pre;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: var(--cl_neutral-02);
-    }
-  }
-}
-// -----------------------------------------------------------------------------------------------------
-// @ Custom Color Class
-// -----------------------------------------------------------------------------------------------------
-.cl-principal {
-  color: var(--cl_principal);
-}
-.cl-secondary {
-  color: var(--secondary);
-}
-.cl-neutral-1 {
-  color: var(--cl_neutral-01);
-}
-.cl_blueviolet {
-  color: var(--cl_blueviolet);
-}
-
-.content {
-  width: 100%;
-  height: calc(657px - 64px);
-  padding: 2em 6em;
-  overflow: auto;
-  background-color: var(--whitesmoke);
-}
-
 /** 
   Button styles. How to use them?
 
@@ -671,42 +488,5 @@ body.bilwee .mat-button-base.button-double {
   .fas {
     margin-left: 1.6em;
     font-size: 1.8em;
-  }
-}
-// -----------------------------------------------------------------------------------------------------
-// @ RADIO BUTTONS
-// -----------------------------------------------------------------------------------------------------
-body.bilwee {
-  .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
-  .mat-button-toggle-group-appearance-standard {
-    border: none;
-    padding-left: 0.5em;
-  }
-
-  .mat-button-toggle-appearance-standard {
-    box-shadow: inset 0 0 0 1px var(--cl_neutral-02);
-    border-radius: 3em;
-    font-size: 1rem;
-    margin: 0.2em;
-    overflow: hidden;
-
-    &.mat-button-toggle-checked {
-      background-color: var(--cl_neutral-07);
-      box-shadow: inset 0 0 0 1px var(--cl_neutral-07);
-      pointer-events: none;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: var(--cl_neutral-06);
-    }
-
-    .mat-button-toggle-label-content {
-      line-height: 1.2em;
-      padding: 0.5em 1em 0.45em;
-      font-family: var(--type_01);
-      color: var(--cl_neutral-02);
-      font-size: 0.9rem;
-    }
   }
 }

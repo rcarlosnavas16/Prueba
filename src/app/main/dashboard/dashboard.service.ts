@@ -33,10 +33,4 @@ export class DashboardService {
       params: parameter,
     });
   }
-
-  public getGeoJson(): Observable<any> {
-    return this.http.get<any>(
-      `https://www.santacruzdetenerife.es/opendata/dataset/f1728492-96a2-4b5f-8d89-ad932ff1f489/resource/0cae87a8-b1ba-4f9c-a963-2abcc1b926a2/download/distritos.geojson`
-    );
-  }
 }

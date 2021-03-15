@@ -1,5 +1,4 @@
 <div [class.example-is-mobile]="mobileQuery.matches" fxLayout="column" fxFill>
-  <!-- [style.marginTop.px]="mobileQuery.matches ? 56 : 0" -->
   <mat-sidenav-container fxLayout="column" fxFill>
     <!-- MENU -->
     <mat-sidenav
@@ -8,71 +7,102 @@
       [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="100"
     >
-      <div fxLayout="column" fxFlexFill>
+      <div fxLayout="column" class="cl_nt4" fxFlexFill>
         <!-- NOMBRE 1 -->
         <div fxLayout="column" fxLayoutAlign="space-between start" fxFlex>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div fxLayout="column" fxFlex>
+          <div class="mb-1" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" class="mr-1" fxFlex>
               <!-- ROW -->
-              <h3 class="sub-title">Total de casos confirmados</h3>
-              <span class="time-info"
+              <span class="sub-title font-weight-normal cl_black">
+                Total de casos confirmados
+              </span>
+              <span class="time-info" *ngIf="marker.updated"
                 >Actualizado a las:
                 {{ marker.updated | date: "shortTime" }}</span
               >
             </div>
             <!-- ROW -->
-            <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
-              <mat-icon>info</mat-icon>
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex="24px">
+              <mat-icon>{{ mat_icon.INFO }}</mat-icon>
             </div>
           </div>
 
           <!-- INDICATOR -->
-          <div fxLayout="row">
-            <span class="indicator">{{ marker.total_count }}</span>
+          <div class="mb-1" fxLayout="row">
+            <span class="indicator font-weight-bold cl_cancel">{{
+              marker.total_count
+            }}</span>
           </div>
 
           <!-- ACTIVE CASE -->
-          <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
-            <div fxLayout="row" fxLayoutAlign="space-between center">
-              <mat-icon>{{ mat_icon.CIRCLE }}</mat-icon>
-              <span>Casos activos</span>
+          <div
+            class="w-100 mb-1"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <div fxLayout="row">
+              <mat-icon class="fix-icon cl_warn">{{
+                mat_icon.CIRCLE || "-"
+              }}</mat-icon>
+              <span class="cl_black">Casos activos</span>
             </div>
             <span class="current-value">{{ marker.confirmed }}</span>
           </div>
 
           <!-- RECOVERED CASE -->
-          <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
-            <div fxLayout="row" fxLayoutAlign="space-between center">
-              <mat-icon>{{ mat_icon.CIRCLE }}</mat-icon>
-              <span>Casos recuperados</span>
+          <div
+            class="w-100 mb-1"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <div fxLayout="row">
+              <mat-icon class="fix-icon cl_success">{{
+                mat_icon.CIRCLE || "-"
+              }}</mat-icon>
+              <span class="cl_black">Casos recuperados</span>
             </div>
             <span class="current-value">{{ marker.recovered }}</span>
           </div>
 
           <!-- DEAD CASE -->
-          <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+          <div
+            class="w-100 mb-1"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
             <div fxLayout="row" fxLayoutAlign="space-between center">
-              <mat-icon>{{ mat_icon.CIRCLE }}</mat-icon>
-              <span>Casos mortales</span>
+              <mat-icon class="fix-icon cl_black">{{
+                mat_icon.CIRCLE || "-"
+              }}</mat-icon>
+              <span class="cl_black">Casos mortales</span>
             </div>
             <span class="current-value">{{ marker.dead }}</span>
           </div>
         </div>
 
-        <!-- NOMBRE 2 -->
+        <!-- LINE -->
         <div class="line-divider"></div>
 
-        <!-- NOMBRE 3 -->
-        <div fxLayout="column" fxLayoutAlign="space-between center" fxFlex>
+        <!-- FILTER SECTION -->
+        <div
+          class="mt-1"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          fxFlex
+        >
           <div
-            style="width: 100%"
+            class="w-100 mb-1"
             fxLayout="row"
             fxLayoutAlign="space-between center"
           >
-            <span>Navegar</span> <button>Ordenar</button>
+            <span>Navegar</span>
+            <button mat-stroked-button color="primary">Buscar</button>
           </div>
-          <div><input type="text" placeholder="escribe aqui" /></div>
-          <div>valor seleccionado</div>
+
+          <mat-form-field class="w-100">
+            <mat-label>escribe aquí</mat-label>
+            <input matInput placeholder="busqueda" />
+          </mat-form-field>
         </div>
       </div>
     </mat-sidenav>

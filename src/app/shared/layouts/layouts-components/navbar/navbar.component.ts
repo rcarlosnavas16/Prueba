@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { DashboardService } from 'src/app/main/dashboard/dashboard.service';
+
 import { MAT_ICON } from 'src/app/shared/utils/constants';
+import { DashboardService } from 'src/app/main/dashboard/dashboard.service';
 
 @Component({
   selector: 'app-navbar',
