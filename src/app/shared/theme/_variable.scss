@@ -186,15 +186,6 @@ $img-bg: url("../../assets/images/bg-people-moves.jpg");
     var(--cl_principal),
     var(--cl_secondary)
   );
-  /*#VARIABLES TIPOGRAFICAS==========*/
+  /*========== #TYPOGRAPHY ==========*/
   --type_default: Roboto, "Helvetica Neue", sans-serif;
-  --type_01: "Poppins", sans-serif;
-  --type_02: "Comfortaa", sans-serif;
-  --type_03: "Barlow Condensed", sans-serif;
-  --type_04: "Fira Mono", monospace;
-  --type_default: var(--type_default);
-  --type_title: var(--type_01);
-  --type_text: var(--type_02);
-  --type_zip: var(--type_03);
-  --type_number: var(--type_04);
 }

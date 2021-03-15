@@ -1,7 +1,5 @@
 <mat-toolbar
-  style="border: 1px blue solid"
-  color="primary"
-  class="example-toolbar"
+  class="navbar-shadow"
   fxLayout="row"
   fxLayoutAlign="space-between center"
 >
@@ -11,18 +9,18 @@
       <mat-icon>{{ mat_icon.MENU }}</mat-icon>
     </button>
 
-    <h3 class="example-app-name">{{ locations || "Estados" }}</h3>
-
-    <button>guardar</button>
+    <h3 class="state-name">{{ locations || "Estados" }}</h3>
   </div>
+
   <!-- SPACE -->
   <div class="example-spacer"></div>
+
   <!-- NAVIGATION -->
-  <div fxLayout="row">
+  <div fxLayout="row" fxLayoutAlign="end end" style="height: 100%">
     <mat-tab-group>
-      <mat-tab label="item 1"></mat-tab>
-      <mat-tab label="item 2"></mat-tab>
-      <mat-tab label="item 3"></mat-tab>
+      <mat-tab label="Información general"></mat-tab>
+      <mat-tab label="Noticias"></mat-tab>
+      <mat-tab label="Gráficos"></mat-tab>
     </mat-tab-group>
   </div>
 </mat-toolbar>

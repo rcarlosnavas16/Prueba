@@ -13,7 +13,7 @@ declare var google: any;
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  public map = null;
+  public map: any = null;
 
   public markers: Array<Markers> = [];
 
@@ -22,8 +22,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     // get data
     this.onFetch();
-    // GEOjSON
-    this.dashboard_service.getGeoJson().subscribe((data) => console.log(data));
   }
   /**
    * get maker list
@@ -57,6 +55,10 @@ export class DashboardComponent implements OnInit {
         zoom: 3,
       }
     );
+
+    /* this.map.data.loadGeoJson(
+      'https://github.com/unitedstates/districts/tree/gh-pages/cds/2012/AK-0'
+    ); */
 
     this.markers.forEach((item) => {
       this.addMarker(item);

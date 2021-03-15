@@ -60,48 +60,49 @@
 }
 
 // -----------------------------------------------------------------------------------------------------
-// @ Custom Form-field
+// @ toolbar
 // -----------------------------------------------------------------------------------------------------
-mat-form-field.mat-form-field-appearance-fill,
-mat-form-field.mat-form-field-appearance-outline {
-  width: 100%;
-  font-size: 1em;
-  /* font-family: $font-family-zip; */
-  .mat-form-field-outline-thick {
-    color: rgba(0, 0, 0, 0.12);
-  }
-  .mat-form-field-wrapper {
-    .mat-form-field-underline {
-      display: none;
-    }
-    textarea.mat-input-element {
-      height: 80px;
-    }
-  }
-  .mat-form-field-label {
-    font-size: 12pt;
-  }
-  .mat-form-field-outline-start {
-    border-radius: 10px 0 0 10px;
-  }
-  .mat-form-field-outline-end {
-    border-radius: 0 10px 10px 0;
-  }
-  &.ng-touched {
-    &.ng-invalid {
-      .mat-form-field-outline,
-      .mat-form-field-label {
-        color: var(--cl_cancel-02);
-      }
-    }
-  }
-  &.ng-valid {
-    .mat-form-field-outline,
-    .mat-form-field-label {
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.navbar-shadow {
+  position: relative;
+  z-index: 2;
+  background-color: var(--white);
+  font: 400 14px/20px var(--type_default);
+  box-shadow: 5px 0px 4px 1px var(--cl_box_shadow);
+  -moz-box-shadow: 5px 0px 4px 1px var(--cl_box_shadow);
+  -webkit-box-shadow: 5px 0px 4px 1px var(--cl_box_shadow);
+}
+// -----------------------------------------------------------------------------------------------------
+// @ ICON BUTTON CLASS
+// -----------------------------------------------------------------------------------------------------
+body.global .mat-icon-button {
+  color: var(--cl_principal);
+  border-radius: 50% !important;
+}
+body.global .mat-icon-button,
+.mat-menu-item {
+  &:hover {
+    .clone {
       color: var(--cl_principal);
+    }
+    .preview {
+      color: var(--cl_neutral-03);
+    }
+    .upload {
+      color: var(--cl_info);
+    }
+    .deactivate {
+      color: var(--cl_cancel);
+    }
+    .activate {
+      color: var(--cl_success);
     }
   }
 }
+
 // -----------------------------------------------------------------------------------------------------
 // @ filters
 // -----------------------------------------------------------------------------------------------------
@@ -470,33 +471,7 @@ body.bilwee .mat-button-base.button-secondary {
     outline: none;
   }
 }
-// -----------------------------------------------------------------------------------------------------
-// @ ICON BUTTON CLASS
-// -----------------------------------------------------------------------------------------------------
-body.global .mat-icon-button {
-  color: var(--cl_neutral-04);
-  border-radius: 50% !important;
-}
-body.global .mat-icon-button,
-.mat-menu-item {
-  &:hover {
-    .clone {
-      color: var(--cl_principal);
-    }
-    .preview {
-      color: var(--cl_neutral-03);
-    }
-    .upload {
-      color: var(--cl_info);
-    }
-    .deactivate {
-      color: var(--cl_cancel);
-    }
-    .activate {
-      color: var(--cl_success);
-    }
-  }
-}
+
 // -----------------------------------------------------------------------------------------------------
 // @ CONFIRM BUTTON CLASS
 // -----------------------------------------------------------------------------------------------------
