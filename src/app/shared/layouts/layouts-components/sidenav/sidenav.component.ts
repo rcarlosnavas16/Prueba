@@ -55,7 +55,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
         let result = new MakerInfo(marker_response);
         this.marker = result.getMakerInfo;
         this.snav.open();
-        console.log(this.marker.updated);
       }
     });
   }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DashboardService } from 'src/app/main/dashboard/dashboard.service';
 import { MAT_ICON } from 'src/app/shared/utils/constants';
 
 @Component({
@@ -9,11 +10,20 @@ import { MAT_ICON } from 'src/app/shared/utils/constants';
 export class NavbarComponent implements OnInit {
   public mat_icon = MAT_ICON;
 
+  public locations: string = '';
+
   @Output() show_nav: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {}
+  constructor(private dashboard_service: DashboardService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dashboard_service.marker_object.subscribe((marker_response) => {
+      // on success response
+      if (marker_response) {
+        this.locations = marker_response.location;
+      }
+    });
+  }
   /**
    * show/hide sideNav menu
    * @param value (required)
