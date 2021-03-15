@@ -15,34 +15,53 @@
             <div fxLayout="column" fxFlex>
               <!-- ROW -->
               <h3 class="sub-title">Total de casos confirmados</h3>
-              <span class="time-info">Actualizado hace xx minutos</span>
+              <span class="time-info"
+                >Actualizado a las:
+                {{ marker.updated | date: "shortTime" }}</span
+              >
             </div>
             <!-- ROW -->
             <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
               <mat-icon>info</mat-icon>
             </div>
           </div>
+
           <!-- INDICATOR -->
           <div fxLayout="row">
-            <span class="indicator">{{ indicator }}</span>
+            <span class="indicator">{{ marker.total_count }}</span>
           </div>
-          <!-- DETAILS -->
-          <div
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
-            fxFlex
-            *ngFor="let item of case_info"
-            style="width: 100%"
-          >
+
+          <!-- ACTIVE CASE -->
+          <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
             <div fxLayout="row" fxLayoutAlign="space-between center">
               <mat-icon>{{ mat_icon.CIRCLE }}</mat-icon>
-              <span>{{ item.name }}</span>
+              <span>Casos activos</span>
             </div>
-            <div class="current-value">000</div>
+            <span class="current-value">{{ marker.confirmed }}</span>
+          </div>
+
+          <!-- RECOVERED CASE -->
+          <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <mat-icon>{{ mat_icon.CIRCLE }}</mat-icon>
+              <span>Casos recuperados</span>
+            </div>
+            <span class="current-value">{{ marker.recovered }}</span>
+          </div>
+
+          <!-- DEAD CASE -->
+          <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <mat-icon>{{ mat_icon.CIRCLE }}</mat-icon>
+              <span>Casos mortales</span>
+            </div>
+            <span class="current-value">{{ marker.dead }}</span>
           </div>
         </div>
+
         <!-- NOMBRE 2 -->
         <div class="line-divider"></div>
+
         <!-- NOMBRE 3 -->
         <div fxLayout="column" fxLayoutAlign="space-between center" fxFlex>
           <div

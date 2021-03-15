@@ -77,9 +77,12 @@ export class DashboardComponent implements OnInit {
       map: this.map,
     });
 
-    // show details
+    // send element to service
     marker.addListener('click', () => {
-      console.log(element);
+      // enable menu
+      element.show_menu = true;
+      // setting value
+      this.dashboard_service.setMarker = element;
     });
 
     // show window on hover

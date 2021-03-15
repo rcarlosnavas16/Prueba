@@ -12,7 +12,7 @@ export interface DataSource {
   longitude: number;
   location: string;
   recovered: number;
-  updated: Date;
+  updated: string;
 }
 
 export interface Markers extends MarkerOption {
@@ -21,8 +21,9 @@ export interface Markers extends MarkerOption {
   dead: number;
   location: string;
   recovered: number;
-  updated: Date;
-  total_count?: number;
+  updated: string;
+  total_count: number;
+  show_menu: boolean;
 }
 
 export interface MarkerOption {
@@ -49,6 +50,7 @@ export class Marker {
       updated: item.updated,
       total_count: item.confirmed + item.dead + item.recovered,
       position: { lat: item.latitude, lng: item.longitude },
+      show_menu: false,
     };
   }
 
