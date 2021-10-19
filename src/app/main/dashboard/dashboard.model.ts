@@ -1,60 +1,39 @@
-// default US location
-export const SELECTED_MAKER = {
-  lat: 43.879078,
-  lng: -103.4615581,
-};
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatButtonToggleGroup } from '@angular/material/button-toggle';
 
-export interface DataSource {
-  confirmed: number;
-  country_code: string;
-  dead: number;
-  latitude: number;
-  longitude: number;
-  location: string;
-  recovered: number;
-  updated: string;
+import { Observable } from 'rxjs';
+
+import { MSearch } from 'src/app/shared/directive/search';
+
+export interface ConfigDataTable {
+  paginator?: MatPaginator;
+  sort?: MatSort;
+  search?: MSearch;
+  refresh: Observable<boolean>;
+  filter?: MatButtonToggleGroup;
 }
 
-export interface Markers extends MarkerOption {
-  confirmed: number;
-  country_code: string;
-  dead: number;
-  location: string;
-  recovered: number;
-  updated: string;
-  total_count: number;
-  show_menu: boolean;
-}
-
-export interface MarkerOption {
-  position: Positions;
-  map?: any;
-  title?: string;
-}
-
-export interface Positions {
-  lat: number;
-  lng: number;
-}
-
-export class Marker {
-  private marker: Markers;
-
-  constructor(item: DataSource) {
-    this.marker = {
-      confirmed: item.confirmed,
-      country_code: item.country_code,
-      dead: item.dead,
-      location: item.location,
-      recovered: item.recovered,
-      updated: item.updated,
-      total_count: item.confirmed + item.dead + item.recovered,
-      position: { lat: item.latitude, lng: item.longitude },
-      show_menu: false,
+export interface DashboardTableItem {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: number;
+    geo: {
+      lat: number;
+      lng: number;
     };
-  }
-
-  public get getMarker() {
-    return this.marker;
-  }
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
 }

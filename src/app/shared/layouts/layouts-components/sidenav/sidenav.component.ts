@@ -3,9 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { OnDestroy, OnInit, ViewChild } from '@angular/core';
 
-import { MakerInfo } from './sidenav.model';
 import { MAT_ICON } from 'src/app/shared/utils/constants';
-import { Markers } from 'src/app/main/dashboard/dashboard.model';
 import { DashboardService } from 'src/app/main/dashboard/dashboard.service';
 
 @Component({
@@ -20,7 +18,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   public mobileQuery: MediaQueryList;
 
-  public marker: Markers = {
+  public marker = {
     confirmed: 0,
     country_code: '',
     dead: 0,
@@ -48,16 +46,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  ngOnInit(): void {
-    this.dashboard_service.marker_object.subscribe((marker_response) => {
-      // on success response
-      if (marker_response) {
-        let result = new MakerInfo(marker_response);
-        this.marker = result.getMakerInfo;
-        this.snav.open();
-      }
-    });
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);

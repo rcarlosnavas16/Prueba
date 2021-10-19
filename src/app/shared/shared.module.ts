@@ -11,6 +11,7 @@ import { MsgBoxComponent } from './components/msg-box/msg-box.component';
 import { FullLayoutComponent } from './layouts/full-layout/full-layout.component';
 import { NavbarComponent } from './layouts/layouts-components/navbar/navbar.component';
 import { SidenavComponent } from './layouts/layouts-components/sidenav/sidenav.component';
+import { MSearch } from './directive/search';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { SidenavComponent } from './layouts/layouts-components/sidenav/sidenav.c
     // COMPONENT
     SidenavComponent,
     NavbarComponent,
+    // DIRECTIVE
+    MSearch,
   ],
   imports: [
     CommonModule,
@@ -39,6 +42,6 @@ import { SidenavComponent } from './layouts/layouts-components/sidenav/sidenav.c
       useValue: {},
     },
   ],
-  exports: [FullLayoutComponent, MaterialModules, FlexLayoutModule],
+  exports: [FullLayoutComponent, MaterialModules, FlexLayoutModule, MSearch],
 })
 export class SharedModule {}
