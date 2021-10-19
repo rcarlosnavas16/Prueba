@@ -76,3 +76,17 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+.page {
+  height: 100%;
+}
+.page-toolbar-row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  margin: 5px 0px;
+}

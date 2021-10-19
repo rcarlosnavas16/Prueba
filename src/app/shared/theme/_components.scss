@@ -1,3 +1,10 @@
+.mat-toolbar,
+.page-toolbar {
+  font-family: $font-family-primary;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+}
 // -----------------------------------------------------------------------------------------------------
 // @ Custom pop-up
 // -----------------------------------------------------------------------------------------------------
@@ -229,7 +236,7 @@ body.global .mat-icon-button,
     font-weight: 900;
   }
 }
-/** 
+/**
   Button styles. How to use them?
 
   Basic Button:  <button mat-flat-button>Basic</button>

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AgmCoreModule } from '@agm/core';
-
 import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DashboardTableComponent } from './dashboard-table/dashboard-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 const routes: Routes = [
   {
@@ -15,14 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyApkMhYiS8J4jAQYrZSmDMgSqvUTh6ovj4',
-    }),
-  ],
+  declarations: [DashboardComponent, DashboardTableComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule, MatTableModule, MatPaginatorModule, MatSortModule],
 })
 export class DashboardModule {}

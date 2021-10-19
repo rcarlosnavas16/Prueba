@@ -1,35 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
-import { DataSource, Markers } from './dashboard.model';
-import { GenealResponse } from 'src/app/shared/utils/interface';
+import { DashboardTableItem } from './dashboard.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DashboardService {
-  private readonly endpoint = 'https://www.trackcorona.live/api/provinces';
-
-  private $marker_object: BehaviorSubject<Markers | any> = new BehaviorSubject(
-    null
-  );
-
-  public marker_object: Observable<Markers> = this.$marker_object.asObservable();
+  private readonly endpoint = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private http: HttpClient) {}
 
-  public set setMarker(v: Markers) {
-    this.$marker_object.next(v);
-  }
   /**
-   * make petition to get makers data
-   * @param parameter code(optional)
-   * @returns Array Markers
+   * make petition to get post data
+   * @param parameter (optional)
+   * @returns Array post
    */
-  public fetch(parameter?: HttpParams): Observable<GenealResponse<DataSource>> {
-    return this.http.get<GenealResponse<DataSource>>(`${this.endpoint}`, {
+  public fetch(parameter?: HttpParams): Observable<DashboardTableItem[]> {
+    return this.http.get<DashboardTableItem[]>(`${this.endpoint}`, {
       params: parameter,
     });
   }

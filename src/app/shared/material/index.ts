@@ -3,6 +3,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 export const MaterialModules = [
   MatIconModule,
@@ -10,4 +11,5 @@ export const MaterialModules = [
   MatButtonModule,
   MatSelectModule,
   MatSnackBarModule,
+  MatButtonToggleModule,
 ];

@@ -1,3 +1,43 @@
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<div id="map"></div>
+<div class="page" fxFlexFill fxLayout="column">
+  <div class="bg-white navbar-shadow page-toolbar" fxLayout="column">
+    <div class="page-toolbar-row">
+      <div class="title">Lista de post</div>
+    </div>
+
+    <div class="page-toolbar-row">
+      <span style="margin-right: 1em"> Ver y organizar por filtro: </span>
+
+      <mat-button-toggle-group #filter="matButtonToggleGroup" [value]="null">
+        <mat-button-toggle [value]="null"> TODOS </mat-button-toggle>
+        <mat-button-toggle [value]="{ id: 1 }"> USUARIO 1 </mat-button-toggle>
+        <mat-button-toggle [value]="{ id: 2 }"> USUARIO 2 </mat-button-toggle>
+        <mat-button-toggle [value]="{ id: 3 }"> USUARIO 3 </mat-button-toggle>
+        <mat-button-toggle [value]="{ id: 4 }"> USUARIO 4 </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <div class="page-toolbar-row">
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <div class="input-search outline w-500-px">
+          <input
+            matInput
+            mSearch
+            #search="mSearch"
+            placeholder="Buscar por email"
+          />
+          <mat-icon matSuffix> search </mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" class="position-relative bg-wrap-table">
+    <app-dashboard-table
+      [search]="search"
+      [filter]="filter"
+      [refresh]="refresh"
+      [refreshStatus]="refreshStatus"
+    >
+    </app-dashboard-table>
+  </div>
+</div>

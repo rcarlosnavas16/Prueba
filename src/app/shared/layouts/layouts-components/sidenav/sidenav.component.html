@@ -14,12 +14,9 @@
             <div fxLayout="column" class="mr-1" fxFlex>
               <!-- ROW -->
               <span class="sub-title font-weight-normal cl_black">
-                Total de casos confirmados
+                Total post
               </span>
-              <span class="time-info" *ngIf="marker.updated"
-                >Actualizado a las:
-                {{ marker.updated | date: "shortTime" }}</span
-              >
+              <span class="time-info"></span>
             </div>
             <!-- ROW -->
             <div fxLayout="column" fxLayoutAlign="center center" fxFlex="24px">
@@ -44,13 +41,13 @@
               <mat-icon class="fix-icon cl_warn">{{
                 mat_icon.CIRCLE || "-"
               }}</mat-icon>
-              <span class="cl_black">Casos activos</span>
+              <span class="cl_black">Usuarios activos</span>
             </div>
             <span class="current-value">{{ marker.confirmed }}</span>
           </div>
 
           <!-- RECOVERED CASE -->
-          <div
+          <!--  <div
             class="w-100 mb-1"
             fxLayout="row"
             fxLayoutAlign="space-between center"
@@ -62,7 +59,7 @@
               <span class="cl_black">Casos recuperados</span>
             </div>
             <span class="current-value">{{ marker.recovered }}</span>
-          </div>
+          </div> -->
 
           <!-- DEAD CASE -->
           <div
@@ -74,7 +71,7 @@
               <mat-icon class="fix-icon cl_black">{{
                 mat_icon.CIRCLE || "-"
               }}</mat-icon>
-              <span class="cl_black">Casos mortales</span>
+              <span class="cl_black">Usuarios inactivos</span>
             </div>
             <span class="current-value">{{ marker.dead }}</span>
           </div>
